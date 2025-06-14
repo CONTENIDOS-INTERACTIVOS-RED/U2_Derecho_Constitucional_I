@@ -1,36 +1,35 @@
 <template lang="pug">
 .curso-container.d-flex.flex-column.min-vh-100
   .container.d-flex.flex-column.justify-content-center.flex-grow-1.px-0.px-md-2
-    div.home-content.d-flex.flex-column-reverse.flex-md-column.p-4.p-lg-0
+    div.home-content.d-flex.flex-column-reverse.flex-lg-column.p-4.p-lg-0
       .bg-white
         .row.g-0
           //- Columna izquierda con imagen
-          .d-none.d-md-block.d-lg-flex.mb-4.mb-md-0.col-md-4.col-xl-5.imagen-section
+          .d-none.d-xl-block.d-xl-flex.mb-4.mb-md-0.col-md-4.col-xl-6.imagen-section
             img.img-fluid.h-full(
               src="@/assets/portada/banner.png"
               alt="Estudiante virtual"
               style="max-width: 672px;"
             )
-          .d-block.d-md-none.mb-4.mb-md-0.col-md-6.imagen-section
+          .d-block.d-lg-none.mx-auto.mb-4.mb-lg-0.col-md-8.col-lg-6.imagen-section
             img.img-fluid.h-full(
               src="@/assets/portada/banner-mobile.png"
               alt="Estudiante virtual"
               style="max-width: 672px;"
             )
           //- Columna derecha con información
-          .col-md-8.col-xl-7.info-section
-            .content-wrapper.px-xl-5.pt-xl-5.text-start
-              p.home-main-title FUNDAMENTACIÓN JURÍDICA
-              h1.home-title.mb-4.text-uppercase Introducción a la Paz y Resolución de Conflictos - Causas y Dinámicas del Conflicto
-              p.descripcion.mb-4 En esta unidad, se diferenciará entre paz negativa (ausencia de violencia) y paz positiva (justicia y bienestar), explorando la "cultura de paz" promovida por la UNESCO, que fomenta el diálogo y la cooperación para una convivencia pacífica. Con estas herramientas, el estudiante podrá identificar factores que generan conflictos y proponer soluciones basadas en la mediación y la colaboración.
-
-              p.descripcion.mb-4.text-bold ¡Prepárate para aplicar herramientas de resolución de conflictos con confianza y eficacia!
+          .col-xl-6.info-section
+            .content-wrapper.px-lg-4.pt-lg-4.px-xxl-5.py-xxl-5.text-start
+              p.home-main-title UNIDAD {{ `${globalData.numeroUnidad}` }}
+              h1.home-title.mb-4 {{ globalData.tituloUnidad }}
+              p.descripcion.mb-4 La unidad 2 “Los derechos consagrados en la Constitución colombiana”, estudia los derechos fundamentales, sociales, económicos, culturales y colectivos, reconocidos por la Constitución de 1991. Analiza su clasificación, mecanismos de protección y su relación con la democracia y los partidos políticos. Se resalta la acción de tutela, las acciones populares y de grupo, como herramientas claves de defensa. También se enfatiza la importancia de la participación ciudadana y la función democrática de los partidos. Esta comprensión permite aplicar el derecho en contextos reales, fortaleciendo la equidad, la justicia y el respeto por la dignidad humana.
 
               .button-container.mt-auto
-                router-link.btn-iniciar(:to="{ name: 'tema1' }")
-                  span INICIAR
-                  div.icon
-                    i.fas.fa-chevron-right
+                router-link.btn-iniciar.w-100.w-md-auto(:to="{ name: 'introduccion' }")
+                  .iniciar-btn-container.w-100.w-md-auto
+                    span.iniciar-btn-text INICIAR
+                    .icon
+                      i.fas.fa-chevron-right
 
       //- Footer
       footer.footer.bg-white
@@ -42,28 +41,36 @@
                 alt="Logo Tecnológica del Oriente"
               )
             .col-lg.px-0.d-none.d-lg-block
-              p.footer-text.mb-0 Todo el contenido de este curso es propiedad intelectual de [Nombre de la Universidad] y está protegido por derechos de autor. No puede ser reproducido, distribuido, modificado ni compartido sin su autorización por escrito.
+              p.footer-text.mb-0 Todo el contenido de este curso es propiedad intelectual de Corporación Tecnológica del Oriente y está protegido por derechos de autor. No puede ser reproducido, distribuido, modificado ni compartido sin su autorización por escrito.
               
 </template>
 
 <script>
 export default {
   name: 'Home',
+  computed: {
+    globalData() {
+      return this.$config.global
+    },
+  },
 }
 </script>
 
 <style lang="sass">
 .curso-container
+  background-color: $color-fondo-home
   .container
     @media (min-width: 1400px)
       max-width: 1378px
   .home-title
-    font-size: 26px
-    font-weight: normal
+    font-size: 26px !important
+    font-weight: bold
+    @media (min-width: 992px)
+      font-size: 38px !important
   .home-main-title
     font-size: 18px
     font-weight: bold
-    color: $color-sistema-d
+    color: $color-acento-contenido
   .home-content
     background-color: white
   .info-section
@@ -71,10 +78,8 @@ export default {
     min-height: 100%
     display: flex
     flex-direction: column
-    border-bottom: 1px solid $color-sistema-f
-    @media (min-width: 576px)
-      padding-right: 2rem
-      padding-bottom: 2rem
+    @media (min-width: 1200px)
+      border-bottom: 1px solid $color-sistema-f
 
   .content-wrapper
     display: flex
@@ -87,26 +92,23 @@ export default {
 
   .btn-iniciar
     display: flex
-    position: relative
     align-items: center
     width: calc(100% - 48px)
     @media (min-width: 576px)
       margin-left: auto
-      width: fit-content
-    span
+      width: fit-content !important
+    .iniciar-btn-container
       text-align: center
-      background-color: $color-sistema-d
-      display: block
-      width: 100%
-      padding: 12px 42px 12px 32px
-      color: #fff
+      display: flex
+      .iniciar-btn-text
+        background-color: $color-acento-botones
+        padding: 12px 42px 12px 32px
+        width: 100%
+        color: #fff !important
     .icon
       background-color: $color-sistema-e
       padding: 0px 20px
       color: #fff
-      position: absolute
-      right: -40px
-      height: 100%
       display: flex
       align-items: center
     /* Aquí tus estilos existentes para el botón */
@@ -139,4 +141,17 @@ export default {
 
   .footer p
     font-size: 14px
+
+.iniciar-btn-container
+  .iniciar-btn-text
+    transition: all 0.25s ease-in-out
+    background-color: $color-acento-botones !important
+    color: #0B0A0A !important
+  .icon
+    transition: all 0.25s ease-in-out
+    // background-color: #083E61 !important
+    background-color: darken($color-acento-botones, 30% ) !important
+  &:hover
+    .icon
+      transform: scale(1.06)
 </style>

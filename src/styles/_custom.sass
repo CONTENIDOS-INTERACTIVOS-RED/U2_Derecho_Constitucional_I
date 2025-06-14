@@ -1,20 +1,360 @@
+.container.tarjeta
+  overflow-y: hidden
 
-.banner-principal-decorativo
+.home-main-title
+  font-size: 18px
+  font-weight: 700
+
+.home-title
+  font-size: 38px !important
+  font-weight: 900 !important
+
+.brounded
+  border-radius: 16px !important
+
+.brounded-sm
+  border-radius: 8px !important
+
+.bg-color
   &-1
-    animation: float1 3.5s ease-in-out infinite alternate
-    position: absolute
-    top: 40%
-    right: 50%
+    background-color: #D2E7F2
   &-2
-    animation: float1 2.8s ease-in-out infinite alternate
+    background-color: #4A5641
+  &-3
+    background-color: #F9E3D4
+  &-4
+    color: #4A5641 !important
+  &-5
+    background-color: #EAE4DC
+  &-6
+    background-color: #D2E7F2
+  &-7
+    background-color: #BCA78F
+  &-8
+    background-color: #CFD7C8
+  &-9
+    background-color: #E7F2F8
+  &-10
+    background-color: #BBDBEB
+  &-11
+    background-color: #FCF5F0
+  &-12
+    background-color: #DEF0FA
+  &-13
+    background-color: #D6F1FF
+  &-14
+    background-color: #8ECAE8
+  &-15
+    background-color: #248ABF
+  &-16
+    background-color: #134B69
+  &-17
+    background-color: #0A2839
+  &-18
+    background-color: #E7EBE3
+  &-19
+    background-color: #A1D2EA
+  &-info
+    background-color: #E8EEFD
+  &-sintesis
+    background-color: #F9F9F9
+  &-white
+    background-color: #fff
+////////////////FONDO COMPLETO CON POSICION/////////////////
+.bg-h85
+  position: relative
+  &::after
+    content: ''
     position: absolute
-    top: 51%
-    right: 30%
+    bottom: 0%
+    left: 0
+    width: 100%
+    height: 90%
+    transform: translateY(-0%)
+    background-color: #F9E3D4
+    z-index: 0
+  .col-lg-12
+    z-index: 1
+  @media screen and (max-width: $bp-max-md)
+    padding: 1rem
+    &::after
+      height: 100%
+      bottom: 0
+
+.bg-h85-1
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: 35%
+    left: 0
+    width: 100%
+    height: 48%
+    transform: translateY(-0%)
+    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(249, 235, 225, 1) 100%)
+    z-index: 0
+  div
+    z-index: 1
+  @media screen and (max-width: $bp-max-md)
+    padding: 1rem
+    &::after
+      height: 100%
+      bottom: 3%
+.bg-h85-2
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: 37%
+    left: 0
+    width: 100%
+    height: 48%
+    transform: translateY(-0%)
+    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(187, 219, 235, 1) 100%);
+    z-index: 0
+  div
+    z-index: 1
+  @media screen and (max-width: $bp-max-md)
+    padding: 1rem
+    &::after
+      height: 100%
+      bottom: 0
+.bg-h85-3
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: 35%
+    left: 0
+    width: 100%
+    height: 48%
+    transform: translateY(-0%)
+    background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(249, 235, 225, 1) 100%)
+    z-index: 0
+  div
+    z-index: 1
+  @media screen and (max-width: $bp-max-md)
+    padding: 1rem
+    &::after
+      height: 100%
+      bottom: 0
+.bg-h85-4
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: 12%
+    left: 0
+    width: 100%
+    height: 27%
+    transform: translateY(-0%)
+    background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(187, 219, 235, 1) 100%);
+    z-index: 0
+  div
+    z-index: 1
+  @media screen and (max-width: $bp-max-md)
+    padding: 1rem
+    &::after
+      height: 100%
+      bottom: 0
+
+.border-top
+  &.color-primario
+    border-top: 5px solid $color-primario !important
+  &.color-secundario
+    border-top: 5px solid $color-secundario !important
+  &.color-terciario
+    border-top: 5px solid $color-terciario !important
+
+// Full Width Background
+.bg-full-width
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: bottom
+  margin-inline: -3.3rem
+  @media screen and (max-width: $bp-max-sm)
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+.bg-full-width-2
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: bottom
+  margin-inline: -3.3rem
+  @media screen and (max-width: $bp-max-sm)
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+.bg-fondo
+  &-1
+    background-image: url("../assets/bg/bg1.svg") !important
+    background-position: top
+  &-2
+    background-image: url("../assets/bg/bg2.svg") !important
+    background-position: bottom
+  &-3
+    background-image: url("../assets/bg/bg3.svg") !important
+    background-position: bottom
+  //&-slider
+    background-image: url("../assets/bg/bg-slider.png") !important
+    background-position: bottom
+
+// Variables
+$custom-card-border-radius: 0px
+$custom-card-shadow: 0 4px 8px rgba(0,0,0,0.1)
+$custom-card-text-bg: #FFF
+$custom-card-text-padding: 15px
+$custom-card-text-font-size: 14px
+$custom-card-img-height: 322px
+.custom-image-card
+  border-radius: $custom-card-border-radius
+  overflow: hidden
+  box-shadow: $custom-card-shadow
+  height: 100%
+  background-color: $custom-card-text-bg
+  transition: transform 0.3s ease 
+  cursor: pointer
+  &:hover
+    transform: scale(1.01)
+  &__image
+    height: $custom-card-img-height
+    object-fit: cover
+
+.custom-image-card-2
+  border-radius: $custom-card-border-radius
+  overflow: hidden
+  box-shadow: $custom-card-shadow
+  height: 100%
+  background-color: $custom-card-text-bg
+  transition: transform 0.3s ease 
+  cursor: pointer
+  &:hover
+    transform: scale(1.01)
+  &__image
+    height: 253px
+    object-fit: cover
 
 
-@keyframes float1
-  0%
-    transform: translateY(20px)
+.acordion__header
+  background-color: lighten($color-secundario, 25%) !important
 
-  100%
-    transform: translateY(0px)
+.acordion__header--active
+  background-color: $color-secundario !important
+  h4, i
+    color: #000 !important
+
+.acordion__contenido
+  background-color: lighten($color-secundario, 27%) !important
+
+
+
+
+.anexo__texto
+  p, strong
+    font-size: 14px !important
+    color: #000 !important
+
+.bloque-texto-c
+  padding: 34px !important
+  p
+    font-size: 22px  !important
+    line-height: 26.4px !important
+    font-weight: 700 !important
+  i
+    color: $color-primario !important
+
+
+.bg-ppal-claro
+  background-color: #F7F4ED
+.bg-ppal-azul
+  background-color: #E5F0F6
+.bg-ppal-azul-oscuro
+  background-color: #D9EEFD
+.bg-ppal-azul-primary
+  background-color: #1172B3
+.bg-red-claro
+  background-color: #FCDFDB !important
+
+
+.box-shadow
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+  border: 2px solid rgba(0,0,0,0.1)
+
+.shadow-soft
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.05)
+
+.tabs-content
+  background-color: #F4F4F4
+
+.material-complementario
+  p,a
+    font-size: 1rem !important
+  a
+    text-decoration: none
+    color: $color-sistema-texto
+
+.img-infografica
+  background-color: transparent
+
+.img-infografica__item, .img-infografica-b__item
+  width: 48px !important
+  @media screen and (max-width: $bp-max-sm)
+    width: 38px !important
+  
+
+.img-infografica__item__dot:before, .img-infografica-b__item__dot:before
+  opacity: 1
+  border: 2px solid #FEFAF3
+  background-color: #F8BC17
+
+.img-infografica__card, .img-infografica-b__card
+  width: 350px !important
+  
+.img-infografica__item__numero
+  font-weight: 900
+
+.lista-ol--cuadro__vineta
+  background-color: $color-secundario
+  color: #000
+  min-width: 32px
+  min-width: 28px
+  height: 28px
+
+  span
+    font-size: 0.85em
+
+.large-2
+  .linea-tiempo-d__item__content__title
+    padding: 28px
+    border-radius: 5px 5px 0px 0px
+    background-color: #F9E3D4
+  .linea-tiempo-d__item__content__title.active
+    background-color: $color-secundario !important
+  .linea-tiempo-d__item__content__slot
+    border-radius: 0px 0px 5px 5px
+    background-color: #FCF5F0
+  .linea-tiempo-d__item__number
+    background-color: #F9E3D4
+  .linea-tiempo-d__item--selected .linea-tiempo-d__item__number
+    background-color: $color-secundario !important
+  .linea-tiempo-d__item__dots:after
+    border-left: 0px
+  .fa-angle-up, .fa-angle-down
+    display: block
+
+.border-top.color-primario
+  border-top: 5px solid $color-primario !important
+  
+.material-complementario
+  p,a
+    font-size: 1rem !important
+  a
+    text-decoration: none
+    color: $color-sistema-texto  
+
+th.bg-color-tabla
+  background-color: #453179 !important
+  color: #fff !important
+
+
+.bordes
+  border: 1px solid lightgray !important

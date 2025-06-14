@@ -5,7 +5,7 @@ aside
       .aside-menu__black-background(@click="toggleMenu(false)")
       nav.aside-menu__content
         .aside-menu__header
-          img(src="@/assets/template/book.svg")
+          img(src="@/assets/template/home.svg")
           h5 Índice temático
         ul.aside-menu__menu
           template(v-for="(item,index) of menuData")
@@ -33,7 +33,7 @@ aside
                     :to="{ name: item.nombreRuta , hash: `#${subItem.hash}` }"
                     @click.native="toggleMenu(false)"
                   )
-                    span.title(v-if="item.hasOwnProperty('numero')" v-html="subItem.numero")
+                    span(v-if="item.hasOwnProperty('numero')" v-html="subItem.numero")
                     span(v-html="subItem.titulo")
 
         ul.aside-menu__sec-menu
@@ -107,7 +107,6 @@ export default {
   top: 54px
   min-height: calc(100vh - 70px)
   max-height: calc(100vh - 70px)
-  background-color: $color-sistema-g
   transition: flex 0.5s ease-in-out, width 0.5s ease-in-out
   overflow-x: hidden
   z-index: 100001
@@ -121,7 +120,7 @@ export default {
     cursor: pointer
 
   a
-    color: $color-sistema-a
+    color: $color-sistema-texto
 
   &__content
     width: 300px
@@ -130,7 +129,6 @@ export default {
     justify-content: space-between
     min-height: calc(100vh - 70px)
     max-height: calc(100vh - 70px)
-    border-right: 1px solid $color-sistema-e
     position: absolute
     background: $white
 
@@ -157,43 +155,45 @@ export default {
     list-style: none
     padding-left: 0
     margin-bottom: 0
-    background-color: $color-sistema-h
+    background-color: $bg-menu
 
     &__item_container
+      position: relative
       padding: 6px 0px
       a
-        padding-right: 16px
-        padding-left: 16px
-        padding-bottom: 8px
+        padding: 12px 18px
 
     &__item
+      position: relative
       &--active
+        position: relative
         .aside-menu__menu__item__lnk
-          background-color: $color-sistema-h
-          font-weight: $base-bold-font-weight
+          // background-color: $color-sistema-h
+          // font-weight: $base-bold-font-weight
 
       &:hover
         background-color: $white
+        a
+          font-weight: $base-bold-font-weight
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 4px
+          height: 100%
+          background-color: $border-color-items-hover
 
       &--sub-menu
         @extend .aside-menu__menu__item
+        position: relative
         a
           font-size: 16px
         &--active
           .aside-menu__menu__item__lnk
-            background-color: $color-sistema-e
+            background-color: $white
             font-weight: $base-bold-font-weight
             position: relative
-            &::before
-              content: ''
-              display: block
-              position: absolute
-              left: 0
-              bottom: 0
-              top: 0
-              width: 4px
-              border-radius: 2px
-              background-color: $color-acento-contenido
 
       &__lnk
         display: flex
@@ -216,12 +216,18 @@ export default {
       @extend .aside-menu__menu__item
       padding: 10px 15px
       &:hover
-        background-color: $color-sistema-h
+        background-color: $bg-subcategory-items-hover
+        span, i
+          color: $color-sistema-texto
+        &::before
+          display: none !important
 
       &__lnk
         @extend .aside-menu__menu__item__lnk
         padding: 0
         border-radius: 1em
+        span, i
+          color: $subcategory-color
         i
           display: block
           width: 2em
@@ -233,8 +239,15 @@ export default {
     &__sec-menu
       padding-bottom: 110px
 
+.aside-menu__menu__item--active
+  background-color: white
+  span
+    font-weight: 900
+  .title
+    font-size: 20.25px
+
 .main-menu-enter-active
-  animation: main-menu-open-animation .3s;
+  animation: main-menu-open-animation .3s
   .aside-menu__black-background
     animation:  main-menu-background-animation .3s
 
