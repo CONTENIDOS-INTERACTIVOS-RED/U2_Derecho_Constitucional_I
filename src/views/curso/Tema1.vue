@@ -5,10 +5,10 @@
 
     .bg-color-1.mb-5(data-aos="fade-up")
       .row.justify-content-center.align-items-center
-        .col-lg-auto.order-2
+        .col-lg-auto.order-lg-2.mb-3.mb-lg-0
           figure
             img(src='@/assets/curso/tema1/1.png', alt='')
-        .col-lg.order-1.mb-3.mb-lg-0
+        .col-lg.order-lg-1
           .p-4
             p.mb-0(data-aos="fade-up") El estudio de la Constitución Política de 1991 revela que el sistema jurídico colombiano reconoce un conjunto amplio y diverso de derechos, estructurados conforme a una visión integral de la persona y su participación en la vida social, política, económica y cultural del país. Esta carta magna no solo organiza el poder público, sino que también propone un modelo de sociedad basado en la dignidad humana, el respeto por las libertades fundamentales y la obligación del Estado de garantizar condiciones mínimas de bienestar para todos.
     
@@ -57,10 +57,10 @@
       h2 #[span 1.1] Derechos fundamentales
     
     .row.mb-5
-      .col-lg-4.order-2
+      .col-lg-4.order-lg-2.mb-3.mb-lg-0
         figure
           img(src="@/assets/curso/tema1/6.png", data-aos="zoom-in")
-      .col-lg-8.order-1.mb-3.mb-lg-0
+      .col-lg-8.order-lg-1
         p(data-aos="fade-left") Los derechos fundamentales consagrados en la Constitución Política de 1991, constituyen la expresión más elevada del compromiso del Estado colombiano, con la dignidad humana y con la consolidación de una sociedad democrática, participativa e incluyente. En este conjunto normativo, la persona es concebida como un sujeto autónomo y titular de derechos inviolables, ubicada en el centro del ordenamiento jurídico, no como objeto de la norma, sino como protagonista activo de la vida jurídica, política y social.
     
         .bg-color-1.p-4.mb-3(data-aos="fade-left")
@@ -160,8 +160,8 @@
     #t_1_2.titulo-segundo(data-aos="flip-up")
       h2 #[span 1.2] Derechos sociales, económicos y culturales 
     
-    .row.mb-5
-      .col-lg-2.mb-3.mb-lg-0
+    .row.mb-5.justify-content-center
+      .col-md-6.col-lg-2.mb-3.mb-lg-0
         figure
           img(src="@/assets/curso/tema1/18.png", data-aos="zoom-in")
       .col-lg-10
